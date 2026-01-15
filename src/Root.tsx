@@ -7,5 +7,7 @@ export const Root = () => {
       <Card title="pikatchu - 0" image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" />
       <Card title="02" image="" />
     </div>};
+    const Card = ({title, image}: {title: string, image: string}) => {
+      return <div className="bg-white w-40 h-40"
 
 
