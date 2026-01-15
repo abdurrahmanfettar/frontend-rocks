@@ -1,4 +1,4 @@
-import pokemonImg from "./pokemon.jpeg"; 
+import pokemonImg from "C:\Users\User\Desktop\frontend_rocks\Pokemon-Malamar.png"; 
 
 
 export const Root = () => {
