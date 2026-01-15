@@ -4,7 +4,7 @@ import pokemonImg from "./Pokemon-Malamar.png";
 
 type Pokemon = {
   id: number;
-  image: string;
+  image: string; // SEMPRE string
   name: string;
   types: string[];
 };
@@ -14,16 +14,19 @@ export function Root() {
 
   useEffect(() => {
     PokeAPI.listPokemons().then(async (response) => {
-      const data = await Promise.all(
+      const data: Pokemon[] = await Promise.all(
         response.results.map(async (item: any) => {
           const detail = await PokeAPI.getPokemonByName(item.name);
+
+          const image =
+            detail.sprites?.other?.["official-artwork"]?.front_default ??
+            pokemonImg;
 
           return {
             id: detail.id,
             name: detail.name,
-            image:
-              detail.sprites.other["official-artwork"].front_default,
-            types: detail.types.map((t: any) => t.type.name),
+            image,
+            types: detail.types?.map((t: any) => t.type.name) ?? [],
           };
         })
       );
@@ -62,7 +65,7 @@ const Card = ({ id, image, name, types }: CardProps) => {
       </div>
 
       <img
-        src={image || pokemonImg}
+        src={image}
         alt={name}
         className="w-40 h-40 object-contain mb-4"
       />
@@ -77,3 +80,4 @@ const Card = ({ id, image, name, types }: CardProps) => {
     </div>
   );
 };
+
