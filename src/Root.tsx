@@ -3,8 +3,8 @@ import pokemonImg from "./Pokemon-Malamar.png";
 
 export const Root = () => {
   return (
-    <div className="text-xl flex flex-wrap justify-center gap-6 p-10">
-      <div className="relative bg-green-500 w-64 h-80 text-center flex flex-col  justify-center rounded-xl shadow-lg p-4">
+    <div className="text-xl flex flex-wrap  gap-6 p-10">
+      <div className="relative bg-green-500 w-64 h-80 text-center flex flex-col items-center justify-center rounded-xl shadow-lg p-4">
         <div className="absolute top-4 left-6 font-bold text-gray-800 text-2xl">
           0
         </div>
