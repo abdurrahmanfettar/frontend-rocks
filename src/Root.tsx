@@ -7,7 +7,7 @@ export const Root = () => {
         title="pikatchu - 0"
         image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
       />
-      <Card title="02" image="" />
+      <Card title="02"   image="" />
     </div>
   );
 };
